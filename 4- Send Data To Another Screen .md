@@ -54,7 +54,8 @@ Text("${Get.arguments}")
 A - Single Parameters(Single Data)
 
 You can also receive NamedParameters with Get easily:
-```dartvoid main() {
+```dart 
+void main() {
   runApp(
     GetMaterialApp(
       getPages: [
@@ -63,7 +64,8 @@ You can also receive NamedParameters with Get easily:
         page: () => Third(),
       ),
      ],
-)}```
+)}
+```
 لارسال داتا واحد بواسطة اسم الروت نعمل الاتي
 1- نكتب اسم الملف عادي مثل كل مره
 2- في الأخير نزيد له /ثم : ثم اسم الباراميتر اللي راح نستلم الداتا بواسطته
