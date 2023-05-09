@@ -24,7 +24,7 @@ Text("${Get.arguments}")
 # وممكن أيضا تكون مع ال withoutNamed👇🏻👇🏻
 مثال
 
-Get.to(()=>PageOne(), arguments: 'Mohammed');
+Get.to(PageOne(), arguments: 'Mohammed');
 on your class or controller:
 واستقبال الداتا هذه ، يكون بالطريقة التالية
 print(Get.arguments);
