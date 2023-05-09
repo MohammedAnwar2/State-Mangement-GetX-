@@ -192,8 +192,7 @@ final controller = Get.lazyPut(()=> ControllerLogic());
 - و يوجد بداخل الصفحه الأولى فيها
 ```dart
 final ControllerLogic controller= Get.find(); 
-final controller = 
-Get.lazyPut(()=> ControllerLogic());
+final controller = Get.lazyPut(()=> ControllerLogic());
 ```
 
 والصفحه الثانية والثالثه فيها
