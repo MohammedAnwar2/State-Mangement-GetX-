@@ -8,7 +8,8 @@ How to send data to named Routes
 Just send what you want for arguments. 
 Get accepts anything here, whether it is a String, a Map, a List, or even a class instance.
 مثااال 
-```dart Get.toNamed("/NextScreen", arguments: 'Get is the best');
+```dart 
+Get.toNamed("/NextScreen", arguments: 'Get is the best');
 ```
 on your class or controller:
 واستقبال الداتا هذه ، يكون بالطريقة التالية
