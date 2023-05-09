@@ -1,4 +1,5 @@
 Dependency Injection is the technique of injecting instances of one class into another. 
+
 هو تكنولوجيا لحقن احد الكلاسات في الاخر.
 
  + توجد عدة انواع منه :-
