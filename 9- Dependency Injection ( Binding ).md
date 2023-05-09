@@ -13,7 +13,7 @@ https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injec
 
 ---------------------------------------------- codes ----------------------------------------------
 
-``dart
+```dart
 class HomeBinding implements Bindings {
 //ال Bindings من مكتبة ال Getx
   @override
