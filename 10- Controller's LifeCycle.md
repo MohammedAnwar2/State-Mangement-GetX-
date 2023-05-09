@@ -1,6 +1,6 @@
 + مثل ما نعرف ان الفلاتر فيه دورة حياة وكذلك ال GetX يوجد فيها دورة حياة.
 
-- فبدل ما نذهب الى view ونستعمل statefullwidget ونستعمل ال initialState و dispose , فالمختصين في GetX عملوا كل الدوال هذه بداخل ال controller علشان بالفعل يتم كتابة كود نظيف.
++ فبدل ما نذهب الى view ونستعمل statefullwidget ونستعمل ال initialState و dispose , فالمختصين في GetX عملوا كل الدوال هذه بداخل ال controller علشان بالفعل يتم كتابة كود نظيف.
 
 -  فالكود الذي تكتبه في ال controller مفصول تماما عن ال view بعكس ال Provider وال Bloc اللي احيانا تعمل initialState و dispose مع ال view،
  
