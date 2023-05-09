@@ -100,9 +100,11 @@ Text("${Get.parameters['user']}")
 On second screen take the data by parameter
 بهذه الطريقة 👇🏻
 
-```dart Text("name = ${Get.parameters['name']}"),
+```dart 
+Text("name = ${Get.parameters['name']}"),
 Text("jobe = ${Get.parameters['jobe']}"),
-Text("colloge = ${Get.parameters['colloge']}"),```
+Text("colloge = ${Get.parameters['colloge']}"),
+```
 
 
 
@@ -116,7 +118,9 @@ B - Multiple Parameters(Multiple Data)
 بعد ال parameter الأول نستخدم ?وبعدها عادي نسند الباراميتر الى القيمة اللي راح تريد بعثها ومن أجل الاستمرار في البعث فيك تعمل & وتدخل اللي بعده
 ```dart 
 Get.toNamed("/profile/34954?flag=true&country=italy");
+```
 or كيدا
+```dart 
 var parameters = 
 <String, String>{"flag":"true","country": "italy",};
 Get.toNamed("/profile/34954", parameters: parameters);
