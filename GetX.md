@@ -47,6 +47,45 @@ return Scaffold(
 
 نلاحظ انه مع تشغيل البرنامج القيمة تزيد مع انه لا توجد الدالة update بداخل الدوال وذلك بفضل ال obs اللي هي ميزة من مزايا ال steam اللي تخلي GetX تستمع لها بدون استعمال الدالة update اللي بتكافى setState في ال statefullwidget وال emit في ال bloc
 
+```dart
+Other ways of making the variable Rx 
+1- The first is using Rx(Type)
+=============================
+initial value is recommended, but not mandatory
+
+final name = RxString(''); 
+
+final isLogged = RxBool (false); 
+
+final count = = RxInt (0);
+
+final balance = RxDouble (0.0);
+
+final items = RxList<String>([]);
+
+final myMap = RxMap<String, int>({});
+
+
+
+2- use Darts Generics, RxType>
+=============================
+final name = Rx<String>(''); final isLogged Rx<Bool>(false); =
+
+final count = Rx<Int>(0); 
+
+final balance = Rx<Double> (0.0);
+
+final number = Rx<Num> (0)
+
+final items = Rx<List<String>> ([]);
+
+final myMap = Rx<Map<String, int>> ({}); 
+
+// Custom classes it can be any class, literally
+
+final user = Rx<User>();
+```
+
 ___________________
 
  ملاحظات مهمه جدا
