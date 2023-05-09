@@ -148,6 +148,18 @@ GetMaterialApp(
 );
 ```
 
+عند استعمال  BindingsBuilder لا تنسى تعمل الكود البرمجي التالي و إلا راح يطلع خطأ
+```dart
+void main() {
+  HomeBinding().dependencies(); //  اسم الكلاس().dependecies()
+  // init for all controllers inside the HomeBinding
+  runApp(const MyApp());
+}
+```
+كل ذا من اجل عمل init لكل controller  بداخل الكلاس HomeBinding  
+
+
+
 -------------------------------------------------------------------------- Access ---------------------------------------------------------------------------
 
 
