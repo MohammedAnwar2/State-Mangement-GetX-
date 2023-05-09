@@ -85,6 +85,7 @@ getPages: [
 ```dart
 void main() {
   HomeBinding().dependencies(); //  اسم الكلاس().dependecies()
+  // init for all controllers
   runApp(const MyApp());
 }
 ```
