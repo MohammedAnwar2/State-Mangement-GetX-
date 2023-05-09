@@ -92,6 +92,8 @@ Get.to(()=>HomePage(),binding:HomeBinding());
 with Named (with route )
 Get.toNamed("/", binding: HomeBinding()); 
 ```
+هنا في هذه الحالة , يتم حقن ال depemdency في الصفحه التي رااح يتم الانتقال لها وهذا يعني كأن ذولا ال الحقن تم عملهن بداخل هذه الصفحة التي تم الانتقال لها , مثال من شاان تتوضح الفكره
+
 
 
   3- عند تشغيل البرنامج مباشرة بواسطة ال initialBinding
