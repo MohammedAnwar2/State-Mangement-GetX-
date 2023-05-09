@@ -10,8 +10,7 @@
 sharedPreferences? sharepref;
 void main()async{
           WidgetsFlutterBinding.ensureInitialized();
-          sharepref = await
-          sharedPreferences.getInstance();
+          sharepref = await sharedPreferences.getInstance();
 }
 ```
 
