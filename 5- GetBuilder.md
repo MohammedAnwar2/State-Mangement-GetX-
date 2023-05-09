@@ -1,8 +1,8 @@
-```dart
+
 ال GetBuilder  هي اسرع من ال GetX وتستهلك ذاكره اقل كأدى ولكن ليست reactive اي ليست تفاعليه مع ال application يعني لو استخدمنا ال GetBuilder  راح نفتقد ميزة مهمه واللي هي ال stream
 
 ليست receive وتعتمد على الدالة update لعمل rebuild 
-
+```dart
 class ControllerLogic extends GetxController {
   int counter = 0;
   
@@ -16,7 +16,7 @@ class ControllerLogic extends GetxController {
     update();
   }
 }
-
+```
 نلاحظ من الكود السابق 
 ان الController<اللوجك> يتكون من 
 1 - متغير اسمه counter
@@ -24,7 +24,7 @@ class ControllerLogic extends GetxController {
 3- ال update الموجودة بداخلهن تعمل على الحديث القيمة مثلها مثل ال setState وال emit
 
 
-
+```dart
     return Scaffold(
       appBar: AppBar(title: Text("Home Page")),
       body: Center(
@@ -45,6 +45,7 @@ class ControllerLogic extends GetxController {
                         },
                         child: Text("+")),
                   ]);
+```
         
 تعمل ال <GetBuilder<ControllerLogic على تحديث ال UI في المنطقة المحدده فقط ، يعني بواسطة ال GetBuilder حددنا المكان الذي يجب على البرنامج يعمل refresh لل UI فيه
 
@@ -70,7 +71,7 @@ class ControllerLogic extends GetxController {
 
 3-عند استعمال GetBuilder وكان ما بداخلها شيء لا يعمل على تغيير ال UI فهنا يظهر خطأ حتى تحسن من كودك
 مثااال👇🏻
-
+```dart
 GetBuilder<CounterLogic>(builder: (logic) {
           return ElevatedButton(
               onPressed: () {
@@ -78,6 +79,7 @@ GetBuilder<CounterLogic>(builder: (logic) {
               },
               child: const Text("+"));
         })
+```
 هنا عملنا GetBuilder وكان ما بداخلها شيء لا يعمل على تحديث الصفحه هنا يظهر خطأ , او ان شاشة العرض ما تظهر ، 
 
 ملاحظة بامكاننا ألغى هذا الخطأ ، بعمل dependency injection 
@@ -87,6 +89,7 @@ var اسم المتغير= Get.put(اس الكلاس());
 
 final CounterLogic controller = Get.put(CounterLogic());
 -------
+```dart
 GetBuilder<CounterLogic>(builder: (logic) {
           return ElevatedButton(
               onPressed: () {
@@ -94,6 +97,7 @@ GetBuilder<CounterLogic>(builder: (logic) {
               },
               child: const Text("+"));
         })
+```
 هنا راح يختفي الخطأ ، 
 
 لكن الصيغة الافضل والمفروض نتبعها كالاتي...!!
