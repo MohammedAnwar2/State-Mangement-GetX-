@@ -57,6 +57,17 @@ class AutoLogin extends GetMiddleware {
     }
   }
 }
+
+or
+
+class AutoLogin extends GetMiddleware {
+  @override
+  RouteSettings? redirect(String? route) {
+    if (sharepref!.getString("id") != null) {
+      return const RouteSettings(name: "/Signup");
+    }
+  }
+}
 ```
 ------------------------------------------------------------------------priority--------------------------------------------------------------------------
 عمل اثنين Middleware وعمل بينهم تفضيل باستخدام 
