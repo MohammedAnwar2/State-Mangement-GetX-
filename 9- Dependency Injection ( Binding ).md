@@ -94,6 +94,24 @@ Get.toNamed("/", binding: HomeBinding());
 ```
 هنا في هذه الحالة , يتم حقن ال depemdency في الصفحه التي رااح يتم الانتقال لها وهذا يعني كأن ذولا ال الحقن تم عملهن بداخل هذه الصفحة التي تم الانتقال لها , مثال من شاان تتوضح الفكره
 
+إذا عندنا صفحه ( home )  وبداخلها صفحتين ( screen1 , screen2 ) و بداخل ال screen1 عملنا
+```dart
+var controller = Get.lazyPut(() => LogicController1());
+var controller2 = Get.lazyPut(() => LogicController2());
+final ControllerLogic1 controller= Get.find(); 
+```
+وفي ال screan2 عملنا بداخلها 
+```dart
+final ControllerLogic2 controller= Get.find(); 
+```
+فعند تشغيل البرنامج والتوج الى الscreen2 رلح يظهر خطأ لأنه لم يتم عمل init. لها بعد , وبنفس الوقت لو دخلنا لل screen1 بالبداية تمام ماشيء مشكله , لكن لو توجهنا الى الscreen2 راح يظهر نفس الخطأ السابق لانه لم يتم init بعد وذلك لان ال Get.lazyPut لا يوجد فيها fenix الذي يتيح الاستمرار بحفظ ال init , لذا فالحل الافضل تعمل fenix في الcontroller2 بالشكل التالي
+```dart
+var controller = Get.lazyPut(() => LogicController1());
+var controller2 = Get.lazyPut(() => LogicController2(),fenix: true);
+final ControllerLogic1 controller= Get.find(); 
+```
+الشيء اللي حاب اوصله انه نفس القواعد حق الدرس الماضي
+
 
 
   3- عند تشغيل البرنامج مباشرة بواسطة ال initialBinding
