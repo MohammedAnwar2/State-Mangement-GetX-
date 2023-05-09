@@ -81,6 +81,14 @@ getPages: [
     GetPage(name: "/", page: () => HomePage(), binding: HomeBinding()), // here!
   ],
 ```
+عند التوجه الى صفحة بواسطة ال getPages لا تنسى تعمل الكود البرمجي التالي و إلا راح يطلع خطأ
+```dart
+void main() {
+  HomeBindings().dependencies(); //  اسم الكلاس().dependecies()
+  runApp(const MyApp());
+}
+```
+
 
 
   2 - عند التوجه الى صفحة ولكن ليس بال getPages 👇🏻
