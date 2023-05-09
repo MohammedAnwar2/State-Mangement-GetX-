@@ -110,7 +110,7 @@ var controller = Get.lazyPut(() => LogicController1());
 var controller2 = Get.lazyPut(() => LogicController2(),fenix: true);
 final ControllerLogic1 controller= Get.find(); 
 ```
-الشيء اللي حاب اوصله انه نفس القواعد حق الدرس الماضي
+الشيء اللي حاب اوصله انه نفس القواعد حق الدرس الماضي < Dependency Injection ( Get put - Get lazyPut - Get find ).md >
 
 
 
