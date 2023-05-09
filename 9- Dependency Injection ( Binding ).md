@@ -84,7 +84,7 @@ getPages: [
 عند التوجه الى صفحة بواسطة ال getPages لا تنسى تعمل الكود البرمجي التالي و إلا راح يطلع خطأ
 ```dart
 void main() {
-  HomeBindings().dependencies(); //  اسم الكلاس().dependecies()
+  HomeBinding().dependencies(); //  اسم الكلاس().dependecies()
   runApp(const MyApp());
 }
 ```
