@@ -88,6 +88,7 @@ void main() {
   runApp(const MyApp());
 }
 ```
+كل ذا من اجل عمل init لكل controller  بداخل الكلاس HomeBinding  
 
 
 
