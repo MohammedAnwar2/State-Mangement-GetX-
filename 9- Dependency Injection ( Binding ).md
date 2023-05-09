@@ -11,7 +11,7 @@ https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injec
 
 - ونستخدم ال route الخاص بال GetX وليس الroute المبني build in في فلاتر
 
--------------------- codes ---------------------
+---------------------------------------------- codes ----------------------------------------------
 
 ``dart
 class HomeBinding implements Bindings {
@@ -86,10 +86,10 @@ getPages: [
   2 - عند التوجه الى صفحة ولكن ليس بال getPages 👇🏻
   
 ```dart
-- without Named ( without route )
+without Named ( without route )
 Get.to(()=>HomePage(),binding:HomeBinding());
 
-- with Named (with route )
+with Named (with route )
 Get.toNamed("/", binding: HomeBinding()); 
 ```
 
@@ -118,7 +118,7 @@ GetMaterialApp(
 );
 ```
 
-------------------- Access --------------------
+----------------------------------------------- Access ------------------------------------------------------------
 
 Now to use access the dependencies, we can simply use Get.find.
 نستخدمه للوصول للبيانات
