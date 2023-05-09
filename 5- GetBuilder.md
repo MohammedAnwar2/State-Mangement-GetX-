@@ -1,4 +1,4 @@
-
+```dart
 ال GetBuilder  هي اسرع من ال GetX وتستهلك ذاكره اقل كأدى ولكن ليست reactive اي ليست تفاعليه مع ال application يعني لو استخدمنا ال GetBuilder  راح نفتقد ميزة مهمه واللي هي ال stream
 
 ليست receive وتعتمد على الدالة update لعمل rebuild 
@@ -125,4 +125,4 @@ $# فالحل هنا نستخدم dependency injectior لحفظ القيم في 
 ال  dependency injectior
 
 
-
+```
