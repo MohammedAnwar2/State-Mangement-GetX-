@@ -90,7 +90,8 @@ Text("${Get.parameters['user']}")
 ```dartgetPages: [
      GetPage(
      name: "page_one /:name/:jobe/:colloge", page: () => Page_one()),
-     ],```
+     ],
+```
 
 
 وفي صفحة ال Page_one نستقبل الداتا التي تم ارسالها بالشكل التالي
@@ -111,7 +112,8 @@ B - Multiple Parameters(Multiple Data)
 بامكاننا ارسل مجموعة من ال parameters 
 مثاال 
 بعد ال parameter الأول نستخدم ?وبعدها عادي نسند الباراميتر الى القيمة اللي راح تريد بعثها ومن أجل الاستمرار في البعث فيك تعمل & وتدخل اللي بعده
-```dart Get.toNamed("/profile/34954?flag=true&country=italy");
+```dart 
+Get.toNamed("/profile/34954?flag=true&country=italy");
 or كيدا
 var parameters = 
 <String, String>{"flag":"true","country": "italy",};
@@ -121,9 +123,11 @@ Get.toNamed("/profile/34954", parameters: parameters);
 وفي صفحة ال profile نستقبل الداتا التي تم ارسالها بالشكل التالي
 On second screen take the data by parameters as usually
 
-```dart print(Get.parameters['user']);
+```dart 
+print(Get.parameters['user']);
 print(Get.parameters['flag']);
-print(Get.parameters['country']);```
+print(Get.parameters['country']);
+```
 // out: 34954 true italy
 
 
