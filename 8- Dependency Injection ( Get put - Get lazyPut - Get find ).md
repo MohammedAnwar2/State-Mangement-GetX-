@@ -4,7 +4,7 @@ Dependency Injection is the technique of injecting instances of one class into a
  + توجد عدة انواع منه :-
 ______________________
 
- 1 + Get put 
+ 1 - Get put 
 تعمل init بنفس الوقت ، مباشرة
 
 
