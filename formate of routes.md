@@ -8,10 +8,7 @@ import '../Pages/page_1.dart';
 import '../Pages/page_2.dart';
 
 List<GetPage<dynamic>> route = [
-  GetPage(
-    name: AppRoute.HomePage,
-    page: () => MyHomePage(),
-  ),
+  GetPage(name: AppRoute.HomePage,page: () => MyHomePage(),),
   GetPage(name: AppRoute.Page1, page: () =>Page_1()),
   GetPage(name: AppRoute.Page2, page: () => Page_2()),
   GetPage(name: AppRoute.Login, page: () => const Login()),
