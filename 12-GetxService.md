@@ -49,5 +49,27 @@ SettingServices controller = Get.find();
 class اسم الكلاس extends GetView {
 }
 ```
-توفر الcontroller instance اي فينا نتخلى عن ال Get.find
+توفر الcontroller instance اي فينا نتخلى عن الGet.find
 
+
+# ملاحظه مهمة جدا
+* اذا ظهر عندك الخطأ التالي 
+```dart
+PlatformException(channel-error, Unable to establish connection on channel., null, null) - saving to local storage
+```
+فالحل كما يلي  
+```dart
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+package="com.example.app">
+
+
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+- نضيفهن في <Inside android->app->src->main->AndroidManifest.xml  قبل ال <application
+
+التوضيح بشكل كامل في الموقع التالي
+```dart
+https://stackoverflow.com/questions/72704184/platformexceptionchannel-error-unable-to-establish-connection-on-channel-nul
+```
