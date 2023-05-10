@@ -79,11 +79,10 @@ getPages: [
         GetPage(
             name: "/",
             page: () => Login(),
-            middlewares: [
-            SuperMarket(), AutoLogin() ]),
+            middlewares: [SuperMarket(), AutoLogin() ]),
             
-        GetPage(name: "/Signup", page: () => Signup()),
-        GetPage(name: "/Market", page: () => Market()),
+           GetPage(name: "/Signup", page: () => Signup()),
+           GetPage(name: "/Market", page: () => Market()),
       ]
 ```
 
@@ -118,10 +117,14 @@ class SuperMarket extends GetMiddleware {
 }
 ```
 
-ملاحظات مهمه جدا :
+- ملاحظات مهمه جدا
 1- نلاحظ ان الكلاس SuperMarket أكثر أهمية من AutoLogin بسبب ان ال priority الخاصة بSuperMarket اقل من ال priority الخاصة بAutoLogin
 
-2-في حالة عملنا ال priority متساويين لكل الكلاسات فان الاهمية تؤخذ للكلاس الذي يوضع أولا في ال 
-middlewares:[     ]
+2-في حالة عملنا ال priority متساويين لكل الكلاسات فان الاهمية تؤخذ للكلاس الذي يوضع أولا في ال   
+```dart
+middlewares: [SuperMarket(), AutoLogin() ]
+اللي هو هنا ()SuperMarket 
+```
 
-------------------------------------------------
+3- لو مثلا SuperMarket أكثر أهمية من AutoLogin و لكن شرط ال SuperMarket مش محقق فمباشرة تنتقل الأهمية لل Middleware التالية واللي هي هنا AutoLogin وبرضو لو كانت غير محققه راح يتم الأنتقال الى الصفحة التي تم وضع ال Middlewares  فيها اللي هي هنا ()Login  
+
