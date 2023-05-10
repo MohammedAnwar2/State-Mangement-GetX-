@@ -127,5 +127,5 @@ middlewares: [SuperMarket(), AutoLogin() ]
 اللي هو هنا ()SuperMarket 
 ```
 
-3- لو مثلا SuperMarket أكثر أهمية من AutoLogin و لكن شرط ال SuperMarket مش محقق فمباشرة تنتقل الأهمية لل Middleware التالية واللي هي هنا AutoLogin وبرضو لو كانت غير محققه راح يتم الأنتقال الى الصفحة التي تم وضع ال Middlewares  فيها اللي هي هنا ()Login  
-
+3- لو مثلا SuperMarket أكثر أهمية من AutoLogin و لكن شرط ال SuperMarket مش محقق فمباشرة تنتقل الأهمية لل Middleware التالية واللي هي هنا AutoLogin وبرضو لو كانت غير محققه راح يتم الأنتقال الى الصفحة التي تم وضع ال Middlewares  فيها اللي هي هنا()Login  
+4- اذا حاب تدخل صفحة ال Home من ضمن ال Priority لا تعمل الروت حقها كذا "/" ابدا ولا ما رح تعمل ال Priority بالشكل الصحيح ابدا 
