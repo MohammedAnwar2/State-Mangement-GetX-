@@ -41,7 +41,7 @@ Future initServices()async{
 ```dart
 SettingServices controller = Get.find();
 ```
-2- أو بأستحدام ال GetView بالشكل التالي
+2- أو بأستخدام ال GetView بالشكل التالي
 ```dart
 class اسم الكلاس extends GetView {
 }
