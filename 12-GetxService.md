@@ -7,6 +7,7 @@
 4-more connection
 
 - Easy Access to Services: Once registered, you can access the service using Get.find() or Get.put() from anywhere in your app. This allows you to easily access the methods and properties of your service, making it convenient to perform tasks such as making API calls, managing state, handling data persistence, and more.
+- 
 - باختصار : اي شيء أنا بحاجة انه يشتغل أول ما يشتغل ال application نستعمل ال GetxService 
 
 
