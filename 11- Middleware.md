@@ -117,7 +117,7 @@ class SuperMarket extends GetMiddleware {
 }
 ```
 
-- ملاحظات مهمه جدا
+# - ملاحظات مهمه جدا
 ____________________
 1- نلاحظ ان الكلاس SuperMarket أكثر أهمية من AutoLogin بسبب ان ال priority الخاصة بSuperMarket اقل من ال priority الخاصة بAutoLogin
 
