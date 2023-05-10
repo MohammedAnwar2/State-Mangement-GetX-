@@ -35,4 +35,15 @@ Future initServices()async{
   await Get.putAsync(() => SettingServices().init());
 }
 ```
-
+--------------------------------------------------------------------How to access--------------------------------------------------------------------------
+- توجد هناك طريقتين  
+1- بأستخدام Get.find() بالشكل التالي
+```dart
+SettingServices controller = Get.find();
+```
+2- أو بأستحدام ال GetView بالشكل التالي
+```dart
+class اسم الكلاس extends GetView {
+//توفر controller instance اي فينا نتخلى عن ال Get.find
+}
+```
