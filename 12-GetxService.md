@@ -8,7 +8,7 @@
 - باختصار : اي شيء أنا بحاجة انه يشتغل أول ما يشتغل ال application نستعمل ال GetxService 
 
 
-________________________GetxService____________________
+________________________GetxService
 ```dart
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
