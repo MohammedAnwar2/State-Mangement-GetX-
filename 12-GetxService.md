@@ -23,3 +23,16 @@ class SettingServices extends GetxService
 
 }
 ```
+---------------------------------------------------------GetxService in main function--------------------------------------------------------------------------
+```dart
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await initServices();
+  runApp( MyApp());
+}
+
+Future initServices()async{
+  await Get.putAsync(() => SettingServices().init());
+}
+```
+
