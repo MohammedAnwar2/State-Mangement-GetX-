@@ -3,7 +3,7 @@
 - بمعنى أول ما نشغل ال Application ممكن نعمل initialised لل services الموجوده عندنا مثل
 - 1-hive.
 - 2-shared preference.
-3-get storage.
+- 3-get storage.
 - 4-more connection.
 
 
