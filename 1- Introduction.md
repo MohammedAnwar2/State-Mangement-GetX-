@@ -1,4 +1,6 @@
 ```dart
+https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injection-8e763d0ec6b9
+
 هي بكج وتقدم لنا ايكو سستم كامل الى البروجكت اللي عندنا
 الايكو سستم هو عبارة عن state management بالاضافة الى بعض الادوات التي توفر لنا جهد ووقت
 تعتمد على معمارية ال MVC ( Model - view - Controls )
