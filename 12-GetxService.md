@@ -73,5 +73,6 @@ package="com.example.app">
 ```dart
 https://stackoverflow.com/questions/72704184/platformexceptionchannel-error-unable-to-establish-connection-on-channel-nul
 ```
-
-- //don't use GerView in GetMaterialApp instead of StatelessWidget
+```dart
+//don't use GerView in GetMaterialApp instead of StatelessWidget
+  ```
