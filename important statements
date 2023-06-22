@@ -1,0 +1,26 @@
+ flutter build apk --split-per-abi
+
+cd ..
+firebase login --reauth
+gradlew signigReport
+
+git init
+git add .
+git commit -m "meesage"
+
+git add .
+git commit -m "meesage"
+git push   
+
+  git clone <url>
+  git add <filename>           /***
+  git commit -m "message" /***
+  git push                             /***
+  git commit -am "message" //add all and commit
+  git log
+  git reset --hard <commithash>
+  git reset --hard origin/master
+  git branch 
+  git checkout -b <branch name>
+  git checkout <branch name>
+  git merge <branch to merge>
