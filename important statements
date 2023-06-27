@@ -1,5 +1,7 @@
  flutter build apk --split-per-abi
 
+https://flutteragency.com/store-data-as-object-in-shared-preferences-in-flutter/
+
 cd ..
 firebase login --reauth
 gradlew signigReport
