@@ -90,6 +90,7 @@ final myMap = RxMap<String, int>({});
 2- use Darts Generics, RxType>
 =============================
 final name = Rx<String>(''); 
+
 final isLogged Rx<Bool>(false);
 
 final count = Rx<Int>(0); 
