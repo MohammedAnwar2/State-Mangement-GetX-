@@ -3,6 +3,83 @@
 //How to Store Data as an Object in Shared Preferences in Flutter?
 https://flutteragency.com/store-data-as-object-in-shared-preferences-in-flutter/
 
+
+
+
+
+
+
+
+
+
+
+
+
+xgraph data.txt -title_x "input size(n)" -title_y "time taken(ns)"
+
+cd /mnt/ يدخل الى الاقراص c d e
+-----------------------------------------------------------------------------------------------------------
+ flutter build apk --split-per-abi
+لعمل apk للبرنامج 
+----------------------------------------------------------------------------------------------------------------
+dart pub cache clean
+في حالة قالك ان هذه ال package غير موجوده , او تريد تفضي القرص من اجل الحصول على مساحة نستخدم هذا ال command
+--------------------------------------- خطوات تثبيت فايربيس 
+Use "dart pub global activate flutterfire_cli", instead of "flutter pub global activate flutterfire_cli"
+
+
+dart pub global activate flutterfire_cli
+flutterfire configure --project=courseflutter-36e61
+cd ..
+firebase login --reauth
+gradlew signingReport
+لو ما ضبط استعمل هذه
+
+اولا شغل التطبيق من شان يتم بنى ال configration  بعدها نفذ التعمليمة التالية
+cd android
+./gradlew signingReport
+ adb connect localhost:51346
+----------------------------------------------------------------------------------------------
+git init
+git add .
+git commit -m "meesage"
+
+git add .
+git commit -m "meesage"
+git push   
+
+  git clone <url>
+  git add <filename>           /***
+  git commit -m "message" /***
+  git push                             /***
+  git commit -am "message" //add all and commit
+  git log
+  git reset --hard <commithash>
+  git reset --hard origin/master
+  git branch 
+  git checkout -b <branch name>
+  git checkout <branch name>
+  git merge <branch to merge>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cd ..
 firebase login --reauth
 gradlew signigReport
