@@ -55,7 +55,7 @@ SettingServices controller = Get.find();
 ```
 2- أو بأستخدام ال GetView بالشكل التالي
 ```dart
-class اسم الكلاس extends GetView {
+class كلاس ما extends GetView<اسم الكلاس اللي بنحقن منه> {
 }
 ```
 توفر الcontroller instance اي فينا نتخلى عن الGet.find
