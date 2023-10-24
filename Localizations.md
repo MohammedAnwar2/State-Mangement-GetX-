@@ -1,18 +1,17 @@
 # Translations class
 ```dart
-class MyLanguage extends Translations {
+class LocalizationModel extends Translations
+{
   @override
-  Map<String, Map<String, String>> get keys => {"ar": ar, "en": en};
+  // TODO: implement keys
+  Map<String, Map<String, String>> get keys => {
+    "ar":ar,
+    "en":en,
+  };
 }
+Map<String,String> ar ={"1": "الصفحة الرئيسة", "2": "عربي", "3": "انجليزي"};
 
-Map<String, String> ar = {
-  "1":"محمد",
-  "2":"سالم",
-};
-Map<String, String> en = {
-  "1":"Mohammed",
-  "2":"Salem",
-};
+Map<String,String> en ={"1": "Home Page", "2": "Arabic", "3": "English"};
 ```
 # Contrller class
 ```dart
