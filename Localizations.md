@@ -106,5 +106,13 @@ class SettingChangeLangauge extends GetView<MyLanguageController> {
   }
 }
 ```
-
-
+# Binding class
+```dart
+class HomeBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(()=> SettingServices());
+    Get.lazyPut(()=> MyLanguageController());
+  }
+}
+```
