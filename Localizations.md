@@ -82,5 +82,30 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+# SettingChangeLangauge page
+```dart
+class SettingChangeLangauge extends GetView<MyLanguageController> {
+  const SettingChangeLangauge({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('1'.tr),
+      ),
+      body:  SizedBox(width: Get.width,child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: (){
+            controller.changeLangauge("ar");
+          }, child:  Text("2".tr)),
+          ElevatedButton(onPressed: (){
+            controller.changeLangauge("en");
+          }, child:  Text("3".tr)),
+        ],
+      )),
+    );
+  }
+}
+```
 
 
