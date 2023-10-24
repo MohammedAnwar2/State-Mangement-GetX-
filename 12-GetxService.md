@@ -38,6 +38,15 @@ Future initServices()async{
   await Get.putAsync(() => SettingServices().init());
 }
 ```
+# الافضل كذا 
+```dart
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync(() async => SettingServices().init());
+  await initServices();
+  runApp( MyApp());
+}
+```
 --------------------------------------------------------------------How to access--------------------------------------------------------------------------
 - توجد هناك طريقتين  
 1- بأستخدام Get.find() بالشكل التالي
