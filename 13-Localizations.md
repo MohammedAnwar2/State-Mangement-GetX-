@@ -40,43 +40,28 @@ class SettingServices extends GetxService
 # Main class
 ```dart
 void main()async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();// <<---------- this one
   await Get.putAsync(() async => SettingServices().init());// <<---------- this one
-  HomeBinding().dependencies();
+  HomeBinding().dependencies();// <<---------- this one
   return runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
-   MyLanguageController loacal = Get.find(); // <<---------- this one
+  MyApp({Key? key}) : super(key: key);
+  
+  MyLanguageController loacal = Get.find(); // <<---------- this one
+  
   @override
   Widget build(BuildContext context) {
-    //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
-      builder: (_ , child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          // You can use the library anywhere in the app even in theme
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
-          initialBinding: HomeBinding(),
-          home: child,
-          initialRoute: "/page1",
-          locale:loacal.local , // <<---------- this one
-          translations: LocalizationModel(),// <<---------- this one
-          getPages: [
-            GetPage(name: "/page1",page: () => SettingChangeLangauge(),),
-          ],
-        );
-      },
-      child: HomePage(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialBinding: HomeBinding(),// <<---------- this one
+      initialRoute: "/page1",
+      locale:loacal.local , // <<---------- this one
+      translations: LocalizationModel(),// <<---------- this one
+      getPages: [
+        GetPage(name: "/page1",page: () => SettingChangeLangauge(),),
+      ],
     );
   }
 }
