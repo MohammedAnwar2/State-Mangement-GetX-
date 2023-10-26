@@ -96,8 +96,8 @@ class SettingChangeLangauge extends GetView<MyLanguageController> {
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(()=> SettingServices());
-    Get.lazyPut(()=> MyLanguageController());
+    Get.lazyPut(()=> SettingServices(),fenix: true);
+    Get.lazyPut(()=> MyLanguageController(),fenix: true);
   }
 }
 ```
