@@ -29,7 +29,7 @@ class AppColors {
   static const Color darkBlue = Color(0xFF011C27);
 }
 ```
-# Dark and Light Theme
+# Custom Dark and Light Theme class
 ```dart
 class Themes {
   static final lightTheme = ThemeData(
