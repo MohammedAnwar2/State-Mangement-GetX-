@@ -122,7 +122,7 @@ class MyApp extends StatelessWidget {
 class DarkLightMode extends StatelessWidget {
   DarkLightMode({super.key});
 
-  final themeController = Get.find<ThemeController>();
+  final themeController = Get.find<ThemeController>();//-------------> this one
 
   @override
   Widget build(BuildContext context) {
@@ -133,22 +133,21 @@ class DarkLightMode extends StatelessWidget {
       body: SizedBox(width: Get.width, child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: () {
-            //themeController.toggleThemeMode();
-              if(!Get.isDarkMode){
-                    themeController.changeTheme(Themes.darkTheme);
-                    themeController.changeThemeMode(ThemeMode.dark);
-                    themeController.saveTheme(true);
+          ElevatedButton(onPressed: () {//-------------> this one
+              if(!Get.isDarkMode){//-------------> this one
+                    themeController.changeTheme(Themes.darkTheme);//-------------> this one
+                    themeController.changeThemeMode(ThemeMode.dark);//-------------> this one
+                    themeController.saveTheme(true);//-------------> this one
               }
               else
                 {
-                  themeController.changeTheme(Themes.lightTheme);
-                  themeController.changeThemeMode(ThemeMode.light);
-                  themeController.saveTheme(false);
+                  themeController.changeTheme(Themes.lightTheme);//-------------> this one
+                  themeController.changeThemeMode(ThemeMode.light);//-------------> this one
+                  themeController.saveTheme(false);//-------------> this one
                 }
           }, child: const Text("Dark Theme")),
           SizedBox(height: 50,),
-          Container(alignment: Alignment.center,height: 50,width: 50,color: Theme.of(context).colorScheme.primary,
+          Container(alignment: Alignment.center,height: 50,width: 50,color: Theme.of(context).colorScheme.primary,//-------------> this one
           child: Text("1234"),)
         ],
       )),
