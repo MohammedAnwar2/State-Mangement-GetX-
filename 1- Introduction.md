@@ -2,6 +2,8 @@
 https://blog.logrocket.com/ultimate-guide-getx-state-management-flutter/
 
 https://stackoverflow.com/questions/74621686/how-to-use-colorscheme-in-flutter-themedata
+
+https://deku.posstree.com/en/flutter/getx/theme/
 ```
 https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injection-8e763d0ec6b9
 
