@@ -117,3 +117,42 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+# Dark Light Mode Page
+```dart
+class DarkLightMode extends StatelessWidget {
+  DarkLightMode({super.key});
+
+  final themeController = Get.find<ThemeController>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: SizedBox(width: Get.width, child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: () {
+            //themeController.toggleThemeMode();
+              if(!Get.isDarkMode){
+                    themeController.changeTheme(Themes.darkTheme);
+                    themeController.changeThemeMode(ThemeMode.dark);
+                    themeController.saveTheme(true);
+              }
+              else
+                {
+                  themeController.changeTheme(Themes.lightTheme);
+                  themeController.changeThemeMode(ThemeMode.light);
+                  themeController.saveTheme(false);
+                }
+          }, child: const Text("Dark Theme")),
+          SizedBox(height: 50,),
+          Container(alignment: Alignment.center,height: 50,width: 50,color: Theme.of(context).colorScheme.primary,
+          child: Text("1234"),)
+        ],
+      )),
+    );
+  }
+}
+```
