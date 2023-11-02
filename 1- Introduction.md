@@ -4,6 +4,9 @@ https://blog.logrocket.com/ultimate-guide-getx-state-management-flutter/
 https://stackoverflow.com/questions/74621686/how-to-use-colorscheme-in-flutter-themedata
 
 https://deku.posstree.com/en/flutter/getx/theme/
+
+
+https://instagram.fblr1-6.fna.fbcdn.net/v/t51.2885-15/309611807_461429132715552_8485053316498374899_n.webp?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyIn0&_nc_ht=instagram.fblr1-6.fna.fbcdn.net&_nc_cat=100&_nc_ohc=SQYYtfjXf6wAX9HvD4Q&edm=AEcnVisBAAAA&ccb=7-5&ig_cache_key=MjkzODUzMTc3ODMwNjg3NDI4MA%3D%3D.2-ccb7-5&oh=00_AfCoJCvelYQME6fqUc1wRlFSmtMgihbpe_08ga-lCQzTcA&oe=654864D5&_nc_sid=55bbed
 ```
 https://medium.com/flutter-community/the-flutter-getx-ecosystem-dependency-injection-8e763d0ec6b9
 
