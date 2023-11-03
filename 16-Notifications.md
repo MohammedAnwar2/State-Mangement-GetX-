@@ -64,12 +64,23 @@ class StorageService extends GetxService {
   }
 }
 ```
+# binding class
+```dart
+class AppBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(StorageService());
+    Get.put(NotificationController());
+  }
+}
+```
 # main class
 ```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   await Get.putAsync(() => StorageService().init());
+  AppBinding().dependencies();
   runApp(NoteAPP());
 }
 ```
