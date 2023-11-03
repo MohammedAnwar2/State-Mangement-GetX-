@@ -186,7 +186,6 @@ class _TestPageState extends State<TestPage> {
           }),
 
           ElevatedButton(onPressed: () async {
-            print("------------->>>>>>> ${StorageService.instance.read("t")}");
             await RequestNotificationsTopic(
                 title: "See the Error", body: "Mohammed Anwar", topic: 'b');
           }, child: const Text("Send Notification")),
