@@ -95,7 +95,7 @@ https://stackoverflow.com/questions/72704184/platformexceptionchannel-error-unab
 
 
 
----------------------------------------------------------------------GetxService class using GetStorage----------------------------------------------------------------------
+---------------------------------------------------------------------GetxService class using GetStorage-----------------------------------------------
 ```dart
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -118,7 +118,7 @@ class StorageService extends GetxService {
   }
 }
 ```
--------------------------------------------------------GetxService in main function-----------------------------------------------------------------------
+-------------------------------------------------------GetxService in main function------------------------------------------------------------------
 ```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -128,7 +128,6 @@ void main() async {
 }
 ```
 -------------------------------------------------------GetxService in Binding-----------------------------------------------------------------------
-* الافضل كذا 
 ```dart
 class AppBinding extends Bindings {
   @override
