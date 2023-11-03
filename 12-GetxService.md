@@ -11,7 +11,7 @@
 - باختصار : اي شيء أنا بحاجة انه يشتغل أول ما يشتغل ال application نستعمل ال GetxService 
 
 
----------------------------------------------------------------------GetxService class----------------------------------------------------------------------
+---------------------------------------------------------------------GetxService class using SharedPreferences----------------------------------------------------------------------
 ```dart
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,7 +38,7 @@ Future initServices()async{
   await Get.putAsync(() => SettingServices().init());
 }
 ```
-# الافضل كذا 
+* الافضل كذا 
 ```dart
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -85,3 +85,59 @@ https://stackoverflow.com/questions/72704184/platformexceptionchannel-error-unab
 ```dart
 //don't use GerView in GetMaterialApp instead of StatelessWidget
   ```
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------GetxService class using GetStorage----------------------------------------------------------------------
+```dart
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+
+class StorageService extends GetxService {
+  static StorageService instance = Get.find<StorageService>();
+  late GetStorage _box;
+
+  Future<StorageService> init() async {
+    _box = GetStorage();
+    return this;
+  }
+
+  T read<T>(String key) {
+    return _box.read(key);
+  }
+
+  void write(String key, dynamic value) async {
+    await _box.write(key, value);
+  }
+}
+```
+-------------------------------------------------------GetxService in main function-----------------------------------------------------------------------
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  await Get.putAsync(() => StorageService().init());
+  runApp(NoteAPP());
+}
+```
+-------------------------------------------------------GetxService in Binding-----------------------------------------------------------------------
+* الافضل كذا 
+```dart
+class AppBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(StorageService());
+  }
+}
+```
+
+
+
+
