@@ -84,7 +84,7 @@ void main() async {
   runApp(NoteAPP());
 }
 ```
-# Api class
+# Api Functions
 ```dart
 // using token
 RequestNotifications({required String title,required String body,required String token})async{
