@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
         child: CustomContainer(
             widget: Obx(() =>
                 ImpNetworkController.instance.connectionStatus.value == 1 ||
-                        NetworkController.instance.connectionStatus.value == 2
+                        ImpNetworkController.instance.connectionStatus.value == 2
                     ? Text("9".tr)
                     : Text("10".tr))),
       ),
