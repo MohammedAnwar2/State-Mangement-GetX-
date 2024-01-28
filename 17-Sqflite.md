@@ -78,7 +78,7 @@ class SQLite {
 }
 ```
 # Tables of Database
-```flutter
+```dart
 class TaskTable {
   static String taskTableName = "task";
   static String col_id = "id";
