@@ -65,6 +65,28 @@ class AppBinding extends Bindings {
 }
 
 ```
+# main function
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync(() async => SettingServices().init());
+  HomeBinding().dependencies();//----------------------------------<<<<
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialBinding: HomeBinding(),
+      getPages: route,
+    );
+  }
+}
+
+```
 # Home Page
 ```dart
 class HomePage extends StatelessWidget {
