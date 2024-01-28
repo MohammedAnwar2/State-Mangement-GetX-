@@ -82,8 +82,8 @@ class HomePage extends StatelessWidget {
             widget: Obx(() =>
                 ImpNetworkController.instance.connectionStatus.value == 1 ||
                         ImpNetworkController.instance.connectionStatus.value == 2
-                    ? Text("9".tr)
-                    : Text("10".tr))),
+                    ? Text("Connected")
+                    : Text("Note Connected"))),
       ),
     );
   }
