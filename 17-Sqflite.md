@@ -16,7 +16,7 @@ class SQLite {
     var databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'LearnSQLite.db');//Name of the database
     Database database = await openDatabase(path,
-        onCreate: _oncreate, version: 9, onUpgrade: _onUpgrade);
+        onCreate: _oncreate, version: 0, onUpgrade: _onUpgrade);
     return database;
   }
 
@@ -75,6 +75,15 @@ class SQLite {
      ''');
     print("_oncreate ==============================");
   }
+}
+```
+# Tables of Database
+```flutter
+class TaskTable {
+  static String taskTableName = "task";
+  static String col_id = "id";
+  static String col_title = "title";
+  static String col_time = "time";
 }
 
 ```
