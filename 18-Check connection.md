@@ -111,4 +111,6 @@ class HomePage extends StatelessWidget {
   }
 }
 ```
+# Simple Example
+# https://github.com/MohammedAnwar2/connection_theme_localization_project.git
 
