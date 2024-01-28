@@ -134,3 +134,34 @@ class ImpTaskDatabaseController extends TaskDatabaseController {
 }
 
 ```
+# Setting Services
+```dart
+class SettingServices extends GetxService {
+  static SettingServices instance = Get.find<SettingServices>();
+  late GetStorage _box;
+
+  Future<SettingServices> init() async {
+    _box = GetStorage();
+    return this;
+  }
+  T read<T>(String key) {
+    return _box.read(key);
+  }
+  void write(String key, dynamic value) async {
+    await _box.write(key, value);
+  }
+}
+
+
+```
+# Bindings
+```dart
+class AppBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => SettingServices(), fenix: true);
+    Get.lazyPut(() => ImpTaskDatabaseController(), fenix: true);
+  }
+}
+
+```
