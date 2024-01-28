@@ -129,8 +129,7 @@ class ImpTaskDatabaseController extends TaskDatabaseController {
   SQLite sq = SQLite();
 
   Future<void> fetchTasks() async {
-    final List<Map<String, dynamic>> taskMaps = await sq.readData(
-        table: TaskTable.taskTableName,
+    final List<Map<String, dynamic>> taskMaps = await sq.readData(table: TaskTable.taskTableName);
     tasks.value = taskMaps.map((data) => Task.fromMap(data)).toList();
     // print("---------------fetchTasks-------------");
   }
