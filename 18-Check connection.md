@@ -6,7 +6,7 @@ abstract class NetworkController extends GetxController {
 }
 
 class ImpNetworkController extends NetworkController {
-  static ImpNetworkController instance = Get.put(ImpNetworkController());
+  static ImpNetworkController instance = Get.find();
   final connectionStatus = 0.obs;
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
@@ -64,5 +64,29 @@ class AppBinding extends Bindings {
   }
 }
 
+```
+# Home Page
+```dart
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text(
+        "Check connection",
+        style: TextStyle(color: Colors.black),
+      )),
+      body: Center(
+        child: CustomContainer(
+            widget: Obx(() =>
+                ImpNetworkController.instance.connectionStatus.value == 1 ||
+                        NetworkController.instance.connectionStatus.value == 2
+                    ? Text("9".tr)
+                    : Text("10".tr))),
+      ),
+    );
+  }
+}
 ```
 
