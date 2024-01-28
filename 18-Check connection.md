@@ -110,6 +110,14 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+/*
+CustomContainer(
+            widget: Obx(() =>
+                NetworkController.instance.connectionStatus.value == 0
+                    ? Text("not connected ")
+                    : Text("connected ")))
+*/
 ```
 # Simple Example
 # https://github.com/MohammedAnwar2/connection_theme_localization_project.git
