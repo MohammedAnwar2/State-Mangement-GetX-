@@ -1,103 +1,151 @@
 # Translations class
 ```dart
-class LocalizationModel extends Translations
-{
+import 'package:get/get.dart';
+
+class LocalizationModel extends Translations {
   @override
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
-    "ar":ar,
-    "en":en,
-  };
+        "ar": ar,
+        "en": en,
+      };
 }
-Map<String,String> ar ={"1": "الصفحة الرئيسة", "2": "عربي", "3": "انجليزي"};
 
-Map<String,String> en ={"1": "Home Page", "2": "Arabic", "3": "English"};
+Map<String, String> ar = {"1": "اختر اللغة", "2": "عربي", "3": "انجليزي"};
+
+Map<String, String> en = {
+  "1": "Choose Language",
+  "2": "Arabic",
+  "3": "English"
+};
+
 ```
 # Contrller class
 ```dart
 class MyLanguageController extends GetxController {
-  Locale local= SettingServices.initServices.pref.getString("lang")==null?Get.deviceLocale!:Locale(SettingServices.initServices.pref.getString("lang")!);
+  Locale? language;
+  MyServices myServices = Get.find<MyServices>();
 
   changeLangauge(String lang) {
-    local = Locale(lang);
-    SettingServices.initServices.pref.setString("lang",lang);
-    Get.updateLocale(local);
+    language = Locale(lang);
+    myServices.sharePref.setString(AppKey.language, lang);
+    Get.updateLocale(language!);
+  }
+
+  @override
+  void onInit() {
+    String? sharedPrefLang = myServices.sharePref.getString(AppKey.language);
+    if (sharedPrefLang == "ar") {
+      language = const Locale("ar");
+    } else if (sharedPrefLang == "en") {
+      language = const Locale("en");
+    } else {
+      language = Locale(Get.deviceLocale!.languageCode);
+      // myServices.sharePref.setString(
+      //     AppKey.language,
+      //     Get.deviceLocale!
+      //         .languageCode); //عرفه افضل في داله الخدمات <services>
+    }
+    super.onInit();
   }
 }
+
 ```
 # Service class
 ```dart
-class SettingServices extends GetxService
-{
-  static SettingServices initServices = Get.find();
-  late SharedPreferences pref ;
-  Future<SettingServices> init()async{
-    pref = await SharedPreferences.getInstance();
+class MyServices extends GetxService {
+  late SharedPreferences sharePref;
+
+  Future<MyServices> init() async {
+    sharePref = await SharedPreferences.getInstance();
     return this;
   }
 }
+
+initServices() async {
+  await Get.putAsync(() => MyServices().init());
+}
+
 ```
 # Main class
 ```dart
-void main()async {
-  WidgetsFlutterBinding.ensureInitialized();// <<---------- this one
-  await Get.putAsync(() async => SettingServices().init());// <<---------- this one
-  HomeBinding().dependencies();// <<---------- this one
-  return runApp( MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();//-----------> here
+  await initServices();//-----------> here
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  
-  MyLanguageController loacal = Get.find(); // <<---------- this one
-  
+  MyLanguageController controller = Get.put(MyLanguageController());//-----------> here
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialBinding: HomeBinding(),// <<---------- this one
-      initialRoute: "/page1",
-      locale:loacal.local , // <<---------- this one
-      translations: LocalizationModel(),// <<---------- this one
-      getPages: [
-        GetPage(name: "/page1",page: () => SettingChangeLangauge(),),
-      ],
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return GetMaterialApp(
+          translations: LocalizationModel(),//-----------> here
+          locale: controller.language,//-----------> here
+          debugShowCheckedModeBanner: false,
+          title: 'First Method',
+          getPages: getPages,
+          theme: ThemeData(
+              fontFamily: "PlayfairDisplay",
+              textTheme: TextTheme(
+                  bodyLarge: TextStyle(
+                      color: AppColor.grey, fontSize: fontSize(14), height: 2),
+                  displayLarge: TextStyle(
+                      color: AppColor.black,
+                      fontSize: fontSize(20),
+                      fontWeight: FontWeight.bold))),
+          home: Onbording(),
+        );
+      },
     );
   }
 }
+
 ```
 # SettingChangeLangauge page
 ```dart
-class SettingChangeLangauge extends GetView<MyLanguageController> {
-  const SettingChangeLangauge({super.key});
+class Language extends GetView<MyLanguageController> {
+  const Language({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('1'.tr),
-      ),
-      body:  SizedBox(width: Get.width,child: Column(
+        body: SafeArea(
+            child: Container(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: (){
-            controller.changeLangauge("ar");
-          }, child:  Text("2".tr)),
-          ElevatedButton(onPressed: (){
-            controller.changeLangauge("en");
-          }, child:  Text("3".tr)),
+          Text(
+            "1".tr,
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
+          verticalSizedBox(25),
+          CustomLanguageButton(
+            buttonName: "2".tr,
+            onTap: () {
+              controller.changeLangauge("ar");
+            },
+          ),
+          verticalSizedBox(10),
+          CustomLanguageButton(
+            buttonName: "3".tr,
+            onTap: () {
+              controller.changeLangauge("en");
+            },
+          )
         ],
-      )),
-    );
+      ),
+    )));
   }
 }
+
 ```
-# Binding class
-```dart
-class HomeBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> SettingServices(),fenix: true);
-    Get.lazyPut(()=> MyLanguageController(),fenix: true);
-  }
-}
-```
+
